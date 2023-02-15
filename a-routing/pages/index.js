@@ -1,5 +1,5 @@
 const Homepage = () => {
-  return <h1>Routing</h1>;
+  return <h1>Home page</h1>;
 };
 
 export default Homepage;
