@@ -1,0 +1,14 @@
+{
+  "orders": [
+    {
+      "id": "u1",
+      "username": "john doe",
+      "amount": "200"
+    },
+    {
+      "id": "u2",
+      "username": "jack smithe",
+      "amount": "400"
+    }
+  ]
+}
