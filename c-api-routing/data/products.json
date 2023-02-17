@@ -1,7 +1,5 @@
 [
-  { "title": "book 1", "price": "145" },
-  { "title": "book 2", "price": "245" },
-  { "title": "book 3", "price": "400" },
-  { "title": "book 4", "price": "222" },
-  { "title": "book 5", "price": "720" }
+  { "id": "_pjz9np0ii", "title": "book1", "price": "100" },
+  { "id": "_i99aeqbwf", "title": "book2", "price": "200" },
+  { "id": "_op4cz408g", "title": "book3", "price": "300" }
 ]

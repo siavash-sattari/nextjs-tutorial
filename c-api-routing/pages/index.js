@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { getUID } from '../utils';
 
 const Homepage = () => {
   const [productItems, setProductItems] = useState([]);
@@ -10,7 +11,9 @@ const Homepage = () => {
     event.preventDefault();
     const title = titleInputRef.current.value;
     const price = priceInputRef.current.value;
-    const reqBody = { title, price };
+    const reqBody = { id: getUID(), title, price };
+    titleInputRef.current.value = '';
+    priceInputRef.current.value = '';
     const response = await fetch('/api/product', {
       method: 'POST',
       body: JSON.stringify(reqBody),
