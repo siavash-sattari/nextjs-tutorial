@@ -1,6 +1,8 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const Homepage = () => {
+  const [productItems, setProductItems] = useState([]);
+
   const titleInputRef = useRef();
   const priceInputRef = useRef();
 
@@ -18,6 +20,12 @@ const Homepage = () => {
     });
   };
 
+  const showProductsHandler = async () => {
+    const response = await fetch('/api/product');
+    const responseData = await response.json();
+    setProductItems(responseData.products);
+  };
+
   return (
     <div>
       <h1>Create New Product</h1>
@@ -30,6 +38,17 @@ const Homepage = () => {
         </div>
         <button>Add</button>
       </form>
+      <div className='divider' />
+      <button onClick={showProductsHandler} className='show-products'>
+        Show All Products
+      </button>
+      <ul>
+        {productItems.map(item => (
+          <li key={item.title}>
+            {item.title} - $ {item.price}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
