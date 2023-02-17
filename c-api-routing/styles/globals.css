@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(58, 58, 58);
+  color: white;
+  font-family: sans-serif;
+  padding: 2rem 5rem;
+}
+
+li {
+  font-size: 1.2rem;
+  margin-bottom: 1.3rem;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  background-color: wheat;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+}
