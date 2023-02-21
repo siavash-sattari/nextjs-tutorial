@@ -1,0 +1,16 @@
+.wrapper {
+  @apply grid md:grid-cols-4 md:gap-3 bg-white rounded-xl p-10;
+
+  & img {
+    @apply rounded-xl;
+  }
+
+  & .price,
+  & .status {
+    @apply mb-2 flex justify-between;
+  }
+
+  & button {
+    @apply rounded-xl bg-gray-700 text-white px-4 py-2 w-full;
+  }
+}

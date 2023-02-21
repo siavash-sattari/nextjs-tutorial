@@ -1,0 +1,18 @@
+.wrapper {
+  @apply flex flex-col justify-between min-h-screen;
+
+  & header nav {
+    @apply flex h-14 px-12 justify-between items-center border-b-4 bg-white;
+    & div {
+      @apply flex gap-4;
+    }
+  }
+
+  & main {
+    @apply container m-auto mt-4 px-4;
+  }
+
+  footer {
+    @apply flex justify-center items-center h-10;
+  }
+}
