@@ -5,6 +5,9 @@
     @apply flex h-14 px-12 justify-between items-center border-b-4 bg-white;
     & div {
       @apply flex gap-4;
+      & .badge {
+        @apply ml-1 rounded-xl bg-gray-200 px-2 py-1 text-xs font-bold;
+      }
     }
   }
 

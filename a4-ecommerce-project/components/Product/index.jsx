@@ -1,8 +1,24 @@
-import React from 'react';
 import Link from 'next/link';
+import { useContext } from 'react';
+import { Store } from '../../context/Cart';
 import styles from './style.module.scss';
 
 function Product({ item }) {
+  const { state, dispatch } = useContext(Store);
+
+  function addToCartHandler() {
+    const existingItem = state.cart.cartItems.find(product => product.slug === item.slug);
+
+    const qty = existingItem ? existingItem.qty + 1 : 1;
+
+    if (item.count < qty) {
+      alert('Product is out.');
+      return;
+    }
+
+    dispatch({ type: 'ADD_TO_CART', payload: { ...item, qty } });
+  }
+
   return (
     <div className={styles.wrapper}>
       <Link href={`/products/${item.slug}`}>
@@ -13,7 +29,7 @@ function Product({ item }) {
           <h2>{item.title}</h2>
         </Link>
         <p>{item.price}</p>
-        <button>Add To Cart</button>
+        <button onClick={addToCartHandler}>Add To Cart</button>
       </div>
     </div>
   );
