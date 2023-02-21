@@ -4,11 +4,15 @@ import { Store } from '../context/Cart';
 import Layout from '../Layout';
 
 function CartPage() {
-  const { state } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
 
   const {
     cart: { cartItems }
   } = state;
+
+  function removeItemHandler(item) {
+    dispatch({ type: 'REMOVE_ITEM', payload: item });
+  }
 
   return (
     <Layout title='cart'>
@@ -39,7 +43,7 @@ function CartPage() {
                     <td className='p-5 text-right'>{item.qty}</td>
                     <td className='p-5 text-right'>{item.price}</td>
                     <td className='p-5 text-center'>
-                      <button>Remove</button>
+                      <button onClick={() => removeItemHandler(item)}>Remove</button>
                     </td>
                   </tr>
                 ))}
